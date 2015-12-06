@@ -7,23 +7,11 @@ RUN sed 's/main/main non-free contrib/' /etc/apt/sources.list > /tmp/sources.lis
     env DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         build-essential \
         cpanminus \
-        freeglut3-dev \
-        libboost-system-dev \
-        libboost-thread-dev \
-        libexpat1-dev \
-        libgtk2.0-dev \
-        libmodule-build-perl \
-        libnet-dbus-perl \
-        libwx-perl \
-        libwxgtk-media3.0-dev \
-        libwxgtk3.0-dev \
-        libxmu-dev \
         perl \
     && apt-get clean
 
 ADD . /slic3r
 WORKDIR /slic3r
 RUN perl Build.PL
-#RUN perl Build.PL --gui
 
 CMD /bin/bash
