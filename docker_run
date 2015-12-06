@@ -1,0 +1,13 @@
+#! /bin/bash
+
+script_rel=`dirname $0`
+src_dir=$(cd $script_rel && pwd)
+
+echo "Mounting source directory ($src_dir) as /source"
+
+docker run -ti --rm \
+    -e DISPLAY=$DISPLAY --net=host \
+    -v $src_dir:/source \
+    -v /root:/root \
+    -v /home:/home \
+    slic3r $*
