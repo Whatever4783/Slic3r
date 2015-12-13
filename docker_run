@@ -1,9 +1,6 @@
 #! /bin/bash
 
-#script_rel=`dirname $0`
-#src_dir=$(cd $script_rel && pwd)
-
 docker run -ti --rm \
     -v /root:/root \
     -v /home:/home \
-    slic3r $*
+    whatever4783/armhf-slic3r $*
