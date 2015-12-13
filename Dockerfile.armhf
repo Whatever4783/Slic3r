@@ -14,4 +14,4 @@ ADD . /slic3r
 WORKDIR /slic3r
 RUN perl Build.PL
 
-CMD /bin/bash
+ENTRYPOINT ["/slic3r/slic3r.pl"]
